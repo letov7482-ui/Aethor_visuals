@@ -1,6 +1,9 @@
 name: Build
+
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -8,16 +11,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Grant execute permission
+
+      - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Build
+
+      - name: Build with Gradle
         run: ./gradlew build
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
         with:
           name: aethor-visuals
           path: build/libs/*.jar
