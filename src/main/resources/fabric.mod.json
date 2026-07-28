@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "aethor-visuals",
+  "version": "1.0.0",
+  "name": "Aethor Visuals",
+  "description": "Modern visuals client with ESP, cosmetics and custom HUD",
+  "authors": ["Aethor Team"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/aethor-visuals/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.aethor.visuals.AethorVisuals"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
