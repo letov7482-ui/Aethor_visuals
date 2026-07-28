@@ -71,4 +71,4 @@ public class AethorVisuals implements ClientModInitializer {
 
         System.out.println("[Aethor Visuals] Loaded successfully!");
     }
-                                                         }
+}
